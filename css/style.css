@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+.cart-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.cart-img-preview {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #f44336;
+    display: none;
+    overflow: hidden;
+}
+
+.cart-img-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cart-preview-panel {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid #f44336;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1000;
+}
+
+.cart-preview-panel.show {
+    display: block;
+}
+
+.btn-sm.btn-danger {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+/* Estilos para las alertas */
+.alert-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    background-color: #4CAF50; /* Verde para éxito */
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    animation: sparkles 1s infinite;
+}
+
+.alert-box.error {
+    background-color: #f44336; /* Rojo para error */
+}
+
+.alert-box.fade-out {
+    opacity: 0;
+}
+
+/* Animación de chispas */
+@keyframes sparkles {
+    0%, 100% {
+        box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.6), 0 0 20px 4px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.8), 0 0 25px 5px rgba(255, 255, 255, 0.6);
+    }
+}
+/* Estilo para el contador del carrito */
+.cart-counter {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+    padding: 2px 6px;
+    font-weight: bold;
+    z-index: 1000;
+}
+#cartIconContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-counter {
+    position: absolute;
+    top: -5px;
+    left: 20px; /* Ajusta esta distancia según el tamaño y la posición del ícono */
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;       /* Tamaño del contador */
+    height: 20px;      /* Asegura que sea un círculo perfecto */
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;     /* Solo aparece cuando hay productos */
+    font-weight: bold;
+}
